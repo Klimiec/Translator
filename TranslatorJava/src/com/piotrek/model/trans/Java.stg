@@ -1,0 +1,81 @@
+group Java;
+
+
+program(statements) ::= <<
+class Klasa {
+    <statements; separator="\n">
+}
+>>
+
+
+compound(type,name,args,locals,stats) ::= <<
+public<type> <name>(<args; separator=", ">) {
+    <locals; separator="\n">
+    <stats; separator="\n">
+}
+>>
+
+
+statementList(locals,stats) ::= <<
+{
+    <locals; separator="\n">
+    <stats; separator="\n">
+}<\n>
+>>
+
+
+repeatLoop(przyp, locals, stats) ::= <<
+do {
+    <locals; separator="\n">
+    <stats; separator="\n">
+} while (<przyp>);
+>>
+
+
+whileLoop(wyr, locals, stats) ::=<<
+while (<wyr>) {
+        <locals; separator="\n">
+        <stats; separator="\n">
+}
+>>
+
+
+if_statement(wk, locals, stats) ::=<<
+if(<wk>) {
+           <locals; separator="\n">
+           <stats; separator="\n">
+}
+>>
+
+
+variable(type,name) ::= "<type> <name>;"
+constance(name,value) ::= "final int <name> = <value>;"
+statement(expr) ::= "<expr>;"
+assign(lhs,rhs) ::= "<lhs> = <rhs>;"
+
+
+equals(left,right) ::= "<left> == <right>"
+lessThan(left,right) ::= "<left> \< <right>"
+lessEqualThan(left,right) ::= "<left> \<= <right>"
+moreThan(left,right) ::= "<left> \> <right>"
+moreEqualThan(left,right) ::= "<left> \>= <right>"
+notEquals(left,right) ::= "<left> != <right>"
+andst(left,right) ::= "<left> && <right>"
+orst(left,right) ::= "<left> || <right>"
+add(left,right) ::= "<left> + <right>"
+mul(left,right) ::= "<left> * <right>"
+sub(left,right) ::= "<left> - <right>"
+div(left,right) ::= "<left> / <right>"
+mod(left,right) ::= "<left> % <right>"
+
+
+type_int() ::= "int"
+type_char() ::= "char"
+type_string() ::="string"
+type_real() ::="float"
+else_statement() ::="else"
+inc_statement(var) ::="<var> ++"
+refVar(id) ::= "<id>"
+iconst(value) ::= "<value>"
+writing_n(txt) ::= "System.out.println (<txt>);"
+writing_n0() ::= "System.out.println;"

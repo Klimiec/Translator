@@ -11,6 +11,7 @@ interfejsów do klas oraz dialektu pascala do Javy.
 
 
 
+
 # Translator [ANG Description]
 
 Description:
